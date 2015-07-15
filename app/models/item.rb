@@ -6,4 +6,8 @@ class Item < Sequel::Model
     super
     validates_presence [:name]
   end
+
+  def before_create
+    self.complete = false
+  end
 end

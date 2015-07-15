@@ -16,17 +16,22 @@ require "sinatra/resources"
 require "json"
 require "pry"
 
-set :database, "sqlite://db/#{ENV["RACK_ENV"]}.db"
+if ENV["RACK_ENV"] == "test"
+  # Use an in-memory database
+  DB = Sequel.sqlite
+else
+  DB = Sequel.connect("sqlite://db/#{ENV["RACK_ENV"]}.db")
+end
 
-migration "create lists" do
-  database.create_table :lists do
+unless DB.table_exists?("lists")
+  DB.create_table :lists do
     primary_key :id
     String      :name
   end
 end
 
-migration "create items" do
-  database.database.create_table :items do
+unless DB.table_exists?("items")
+  DB.create_table :items do
     primary_key :id
     Integer     :list_id
     String      :name
