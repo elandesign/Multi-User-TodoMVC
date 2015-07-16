@@ -11,3 +11,7 @@ group :test do
   gem "rack-test"
   gem "database_cleaner"
 end
+
+group :development do
+  gem 'guard-rspec', require: false
+end

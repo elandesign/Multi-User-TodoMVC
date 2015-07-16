@@ -35,7 +35,7 @@ unless DB.table_exists?("items")
     primary_key :id
     Integer     :list_id
     String      :name
-    FalseClass  :complete
+    FalseClass  :complete, default: false
   end
 end
 
