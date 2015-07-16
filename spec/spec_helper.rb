@@ -5,7 +5,7 @@ require "database_cleaner"
 ENV["RACK_ENV"] = "test"
 
 require_relative "../config/boot"
-require_relative "./spec_helper_methods"
+require_relative "./support/helper_methods"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
