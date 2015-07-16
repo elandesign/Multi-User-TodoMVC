@@ -5,6 +5,7 @@ require "database_cleaner"
 ENV["RACK_ENV"] = "test"
 
 require_relative "../config/boot"
+require_relative "./spec_helper_methods"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -16,26 +17,19 @@ RSpec.configure do |config|
   end
 
   config.before :suite do
-    DatabaseCleaner[:sequel, {connection: ::DB}].strategy = :transaction
-    DatabaseCleaner[:sequel, {connection: ::DB}].clean_with(:truncation)
+    DatabaseCleaner.strategy = :transaction
   end
-
-  config.before do
-    DatabaseCleaner[:sequel, {connection: ::DB}].start
-  end
-
-  config.after do
-    DatabaseCleaner[:sequel, {connection: ::DB}].clean
-  end
-
-  config.include Rack::Test::Methods
 
   config.before do
     self.class.send(:attr_accessor, :app)
     self.app = ApplicationController
+    DatabaseCleaner.start
   end
-end
 
-def json_response
-  JSON.parse(last_response.body)
+  config.after do
+    DatabaseCleaner.clean
+  end
+
+  config.include Rack::Test::Methods
+  config.include SpecHelperMethods
 end
