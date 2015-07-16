@@ -1,8 +1,35 @@
 class ApplicationController < Sinatra::Base
   register Sinatra::Resources
 
+  set :root, File.dirname(__FILE__)
+  set :sprockets, Sprockets::Environment.new(root)
+  set :precompile, [ /\w+\.(?!js|css).+/, /application.(css|js)$/ ]
+  set :assets_prefix, "/assets"
+  set :digest_assets, false
+
+  configure do
+    %w{javascripts stylesheets images fonts}.each do |type|
+      sprockets.append_path File.join("assets", type)
+    end
+
+    Sprockets::Helpers.configure do |config|
+      config.environment = sprockets
+      config.prefix = assets_prefix
+      config.digest = digest_assets
+      config.public_path = public_folder
+    end
+  end
+
+  helpers do
+    include Sprockets::Helpers
+  end
+
   get "/" do
-    "Hello World"
+    erb <<-END
+    Hello World<br />
+    <img src="<%= image_path 'under_construction.gif' %>" />
+    <%= stylesheet_tag 'under_construction' %>
+    END
   end
 
   resource :lists do

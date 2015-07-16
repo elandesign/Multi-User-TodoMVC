@@ -14,6 +14,9 @@ require "sinatra"
 require "sinatra/sequel"
 require "sinatra/resources"
 require "json"
+require "sprockets"
+require "sprockets-helpers"
+require "sprockets-sass"
 require "pry"
 
 set :database, "sqlite://db/#{ENV["RACK_ENV"]}.db"
@@ -26,7 +29,7 @@ migration "create lists" do
 end
 
 migration "create items" do
-  database.database.create_table :items do
+  database.create_table :items do
     primary_key :id
     Integer     :list_id
     String      :name
