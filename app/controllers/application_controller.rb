@@ -1,7 +1,7 @@
 class ApplicationController < Sinatra::Base
   register Sinatra::Resources
 
-  set :root, File.dirname(__FILE__)
+  set :root, File.dirname(File.expand_path('..', __FILE__))
   set :sprockets, Sprockets::Environment.new(root)
   set :precompile, [ /\w+\.(?!js|css).+/, /application.(css|js)$/ ]
   set :assets_prefix, "/assets"
