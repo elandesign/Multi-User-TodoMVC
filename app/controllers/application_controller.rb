@@ -24,6 +24,25 @@ class ApplicationController < Sinatra::Base
     include Sprockets::Helpers
   end
 
+  configure :development do
+    register Sinatra::Reloader
+    set :show_exceptions, false
+  end
+
+  error Sequel::ValidationFailed do |ex|
+    status 400
+    { "error" => ex.message }.to_json
+  end
+
+  error Sequel::MassAssignmentRestriction do |ex|
+    status 400
+    { "error" => "invalid field(s) provided" }.to_json
+  end
+
+  error Sequel::NoMatchingRow do
+    halt 404
+  end
+
   get "/" do
     erb <<-END
     Hello World<br />
@@ -34,40 +53,47 @@ class ApplicationController < Sinatra::Base
 
   resource :lists do
     get do
-      List.all.map(&:values).to_json
+      List.all.map(&:to_hash).to_json
     end
 
     post do
-      list = List.new(params[:list]).save
-      list.values.to_json
+      List.create(params[:list] || {}).to_json
     end
 
     member do
       get do |id|
-        List[id].values.to_json
+        List.with_pk!(id).to_json
+      end
+
+      put do |id|
+        List.with_pk!(id).set(params[:list] || {}).save.to_json
       end
 
       delete do |id|
-        List[id].delete
+        List.with_pk!(id).delete
+        halt 200
       end
 
       resource :items do
         get do |list_id|
-          List[list_id].items.map(&:values).to_json
+          List.with_pk!(list_id).items.map(&:to_hash).to_json
         end
 
         post do |list_id|
-          item = List[list_id].add_item(params[:item])
-          item.values.to_json
+          List.with_pk!(list_id).add_item(params[:item] || {}).to_json
         end
 
         member do
           get do |list_id, id|
-            List[list_id].items(id: id).first.values.to_json
+            Item.first!(id: id, list_id: list_id).to_json
           end
 
-          delete do |id|
-            List[list_id].items(id: id).first.delete
+          delete do |list_id, id|
+            Item.first!(id: id, list_id: list_id).delete
+          end
+
+          put do |list_id, id|
+            Item.first!(id: id, list_id: list_id).set(params[:item] || {}).save.to_json
           end
         end
       end

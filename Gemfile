@@ -11,6 +11,14 @@ gem "uglifier"
 gem "therubyracer"
 
 group :development do
+  gem "sinatra-contrib"
+  gem 'guard-rspec', require: false
   gem "shotgun"
   gem "pry"
+end
+
+group :test do
+  gem "rspec"
+  gem "rack-test"
+  gem "database_cleaner"
 end
