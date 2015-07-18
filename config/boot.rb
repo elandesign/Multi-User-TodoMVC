@@ -17,7 +17,7 @@ require "sinatra/resources"
 require "json"
 require "sprockets"
 require "sprockets-helpers"
-require "sprockets-sass"
+require "sprockets/es6"
 require "pry"
 
 if ENV["RACK_ENV"] == "test"
