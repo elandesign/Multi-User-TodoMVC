@@ -1,6 +1,11 @@
 class ApplicationController < Sinatra::Base
   register Sinatra::Resources
 
+  configure :development do
+    register Sinatra::Reloader
+    set :show_exceptions, false
+  end
+
   error Sequel::ValidationFailed do |ex|
     status 400
     { "error" => ex.message }.to_json

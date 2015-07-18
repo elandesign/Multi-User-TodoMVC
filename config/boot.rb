@@ -11,6 +11,7 @@ Bundler.setup(:default, ENV["RACK_ENV"].to_sym)
 $LOAD_PATH.unshift File.expand_path(File.join("..", "app"), File.dirname(__FILE__))
 
 require "sinatra"
+require "sinatra/reloader" if ENV["RACK_ENV"] == "development"
 require "sinatra/sequel"
 require "sinatra/resources"
 require "json"

@@ -13,5 +13,6 @@ group :test do
 end
 
 group :development do
+  gem "sinatra-contrib"
   gem 'guard-rspec', require: false
 end
