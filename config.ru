@@ -1,5 +1,6 @@
 require_relative "config/boot"
 
 run Rack::URLMap.new(
-  '/' => ApplicationController
+  ApplicationController.assets_prefix => ApplicationController.sprockets,
+  '/' => ApplicationController,
 )
