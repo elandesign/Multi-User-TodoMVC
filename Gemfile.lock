@@ -12,6 +12,7 @@ GEM
     execjs (2.5.2)
     ffi (1.9.10)
     formatador (0.2.5)
+    git-version-bump (0.15.1)
     guard (2.12.8)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -43,6 +44,9 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.6.4)
+    rack-contrib (1.4.0)
+      git-version-bump (~> 0.15)
+      rack (~> 1.4)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -110,6 +114,7 @@ DEPENDENCIES
   database_cleaner
   guard-rspec
   pry
+  rack-contrib
   rack-test
   rspec
   sass

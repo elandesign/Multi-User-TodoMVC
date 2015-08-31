@@ -10,6 +10,7 @@ gem "sass"
 gem "sprockets-es6"
 gem "uglifier"
 gem "therubyracer"
+gem "rack-contrib"
 
 group :development do
   gem "sinatra-contrib"
