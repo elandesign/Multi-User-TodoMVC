@@ -2,6 +2,7 @@ class ApplicationController < Sinatra::Base
   register Sinatra::Resources
 
   set :root, File.dirname(File.expand_path('../..', __FILE__))
+  set :views, Proc.new { File.join(root, "app", "views") }
   set :sprockets, Sprockets::Environment.new(root)
   set :precompile, [ /\w+\.(?!js|css).+/, /application.(css|js)$/ ]
   set :assets_prefix, "/assets"
@@ -45,11 +46,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb <<-END
-    Hello World<br />
-    <img src="<%= image_path 'under_construction.gif' %>" />
-    <%= stylesheet_tag 'under_construction' %>
-    END
+    erb :app
   end
 
   resource :lists do
