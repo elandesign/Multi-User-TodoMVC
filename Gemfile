@@ -17,6 +17,7 @@ group :development do
   gem 'guard-rspec', require: false
   gem "shotgun"
   gem "pry"
+  gem "foreman", require: false
 end
 
 group :test do
