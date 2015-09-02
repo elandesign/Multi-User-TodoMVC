@@ -1,0 +1,34 @@
+{
+  "name": "multi-user-todomvc",
+  "version": "0.0.1",
+  "description": "A multi user todo app to experiment with React and Flux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elandesign/Multi-User-TodoMVC.git"
+  },
+  "author": "Paul Smith & Harry Mills",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elandesign/Multi-User-TodoMVC/issues"
+  },
+  "homepage": "https://github.com/elandesign/Multi-User-TodoMVC#readme",
+  "devDependencies": {
+    "babel-core": "^5.8.23",
+    "babel-loader": "^5.3.2",
+    "exports-loader": "^0.6.2",
+    "imports-loader": "^0.6.4",
+    "jsx-loader": "^0.13.2",
+    "node-sass": "^3.3.2",
+    "sass-loader": "^2.0.1",
+    "webpack": "^1.12.0"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "react": "^0.13.3",
+    "whatwg-fetch": "^0.9.0"
+  }
+}

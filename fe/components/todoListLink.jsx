@@ -1,4 +1,6 @@
-class TodoListLink extends React.Component {
+import React from 'react/addons';
+
+export default class TodoListLink extends React.Component {
   constructor(props) {
     super(props);
   }

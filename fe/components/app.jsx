@@ -1,4 +1,8 @@
-class App extends React.Component {
+import React from 'react/addons';
+import ListIndex from './listIndex.jsx';
+import TodoList from './todoList.jsx';
+
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {"list": undefined};

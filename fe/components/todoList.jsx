@@ -1,16 +1,19 @@
-class TodoList extends React.Component {
+import React from 'react/addons';
+import TodoListItem from './todoListItem.jsx';
+
+export default class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {"items": []};
   }
 
   componentDidMount() {
-    $.ajax({
-      url: "/lists/" + this.props.id + "/items",
-      dataType: "json",
-      cache: false,
-      success: data => { this.setState({items: data}); },
-      error: (xhr, status, err) => { console.error(status, err.toString()); }
+    fetch("/lists/" + this.props.id + "/items").then(response => {
+      return response.json();
+    }).then(data => {
+      this.setState({items: data});
+    }).catch(ex => {
+      console.error('Failed to fetch data', ex);
     });
   }
 

@@ -1,19 +1,21 @@
-class ListIndex extends React.Component {
+import React from 'react/addons';
+import TodoListLink from './todoListLink.jsx';
+
+export default class ListIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {"lists": []};
   }
 
   componentDidMount() {
-    $.ajax({
-      url: "/lists",
-      dataType: "json",
-      cache: false,
-      success: data => { this.setState({lists: data}); },
-      error: (xhr, status, err) => { console.error(status, err.toString()); }
+    fetch("/lists").then(response => {
+      return response.json();
+    }).then(data => {
+      this.setState({lists: data});
+    }).catch(ex => {
+      console.error('Failed to fetch data', ex);
     });
   }
-
   changeList(listID, listName) {
     this.props.setList(listID, listName);
    }
