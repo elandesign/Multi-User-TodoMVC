@@ -1,5 +1,52 @@
-h1 {
-  font-family: Tahoma;
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@mixin headings {
+  width: 100%;
   font-weight: lighter;
   color: grey;
+}
+
+
+body {
+  background-color: #fff9ee;
+  font-family: Tahoma;
+}
+
+#todoApp {
+  background-color: white;
+  width: 40%;
+  margin: auto;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 1em;
+
+  h1 {
+    @include headings;
+    text-align: center;
+  }
+  h2 {
+    @include headings;
+  }
+
+  ul {
+    li {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      &.todo {
+        border-top: 1px solid #ccc;
+        &:last-child {
+          border-bottom: 1px solid #ccc;
+        }
+        input[type='checkbox']:checked + span {
+          text-decoration: line-through;
+        }
+        i {
+          float: right;
+        }
+      }
+    }
+  }
 }

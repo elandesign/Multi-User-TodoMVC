@@ -11,6 +11,7 @@ gem "sprockets-es6", require: "sprockets/es6"
 gem "uglifier"
 gem "therubyracer"
 gem "rack-contrib"
+gem "font-awesome-sass"
 
 group :development do
   gem "sinatra-contrib"
