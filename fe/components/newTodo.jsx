@@ -8,15 +8,22 @@ export default class TodoList extends React.Component {
 
   onAdd() {
     todoActions.addTodo(this.props.listId, this.state.text);
+    this.setState({text: ""});
   }
 
   onChange(event) {
     this.setState({text: event.target.value});
   }
 
+  _onKeyDown(event) {
+    if (event.keyCode === 13) { // ENTER
+      this.onAdd();
+    }
+  }
+
   render() {
-    return <li>
-      <input type="text" value={this.state.text} onChange={this.onChange.bind(this)} />
+    return <li className="todo">
+      <input type="text" className="addTodo" tabIndex="1" value={this.state.text} onChange={this.onChange.bind(this)} onKeyDown={this._onKeyDown.bind(this)} />
       <input type="button" value="Add" onClick={this.onAdd.bind(this)} />
     </li>;
   }

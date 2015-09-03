@@ -5,6 +5,7 @@ import todoStore from '../stores/todoStore.es6';
 import todoActions from '../actions/todoActions.es6';
 import connectToStores from 'alt/utils/connectToStores';
 var Link = Router.Link;
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 class TodoList extends React.Component {
   constructor(props) {
@@ -31,7 +32,9 @@ class TodoList extends React.Component {
     return <div>
       <h2>{this.props.name}</h2>
       <ul id="items">
-        {items}
+        <ReactCSSTransitionGroup transitionName="fade">
+          {items}
+        </ReactCSSTransitionGroup>
         <NewTodo listId={this.props.listId} />
       </ul>
       <Link to="lists">Back</Link>

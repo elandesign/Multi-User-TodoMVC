@@ -34,7 +34,6 @@ class TodoActions {
         fetch('/lists/' + listId).then(response => {
           return response.json();
         }).then(data => {
-          console.log(todos);
           dispatch([data.id, data.name, todos]);
         });
       });

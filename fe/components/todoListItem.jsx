@@ -10,10 +10,10 @@ export default class TodoListItem extends React.Component {
   }
 
   render() {
-    return <li className="todo" id={this.props.id}>
-      <input type="checkbox" />
-      {this.props.name}
+    return <li className="todo" id={this.props.todoId}>
+      <label htmlFor={"chk-" + this.props.todoId}>{this.props.name}</label>
+      <input type="checkbox" id={"chk-" + this.props.todoId} />
       <i className="fa fa-trash" onClick={this.deleteTodo.bind(this)}></i>
-    </li>;
+    </li>
   }
 }
