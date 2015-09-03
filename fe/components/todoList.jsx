@@ -10,7 +10,7 @@ var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
-    todoActions.listLoad(4);
+    todoActions.listLoad(this.props.params.listId);
   }
 
   static getStores() {

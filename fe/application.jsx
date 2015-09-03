@@ -15,6 +15,6 @@ var routes = (
   </Route>
 );
 
-Router.run(routes, function(Handler) {
-  React.render(<Handler />, document.getElementById("container"));
+Router.run(routes, function(Handler, state) {
+  React.render(<Handler params={state.params} />, document.getElementById("container"));
 });

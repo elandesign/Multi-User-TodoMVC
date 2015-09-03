@@ -3,6 +3,6 @@ var RouteHandler = Router.RouteHandler;
 
 export default class App extends React.Component {
   render() {
-    return <RouteHandler />
+    return <RouteHandler {...this.props} />
   }
 }
