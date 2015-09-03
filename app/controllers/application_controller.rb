@@ -88,6 +88,7 @@ class ApplicationController < Sinatra::Base
 
           delete do |list_id, id|
             Item.first!(id: id, list_id: list_id).delete
+            ""
           end
 
           put do |list_id, id|
