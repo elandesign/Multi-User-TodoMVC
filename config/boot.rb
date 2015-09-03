@@ -18,6 +18,7 @@ require "json"
 require "sprockets"
 require "sprockets-helpers"
 require "sprockets/es6"
+require "font-awesome-sass"
 require "pry"
 
 if ENV["RACK_ENV"] == "test"

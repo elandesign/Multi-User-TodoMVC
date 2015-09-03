@@ -1,0 +1,76 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@mixin headings {
+  width: 100%;
+  font-weight: lighter;
+  color: grey;
+}
+
+
+body {
+  background-color: #fff9ee;
+  font-family: Tahoma;
+}
+
+#todoApp {
+  background-color: white;
+  width: 40%;
+  margin: auto;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 1em;
+
+  h1 {
+    @include headings;
+    text-align: center;
+  }
+  h2 {
+    @include headings;
+  }
+
+  ul {
+    li {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      &.todo {
+        border-top: 1px solid #ccc;
+        &:last-child {
+          border-bottom: 1px solid #ccc;
+        }
+        span, .addTodo {
+          margin-left: 1em;
+        }
+        input[type='checkbox'] {
+          float: left;
+        }
+        input[type='checkbox']:checked + span {
+          text-decoration: line-through;
+        }
+        i {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}

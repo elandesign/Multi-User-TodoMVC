@@ -7,16 +7,18 @@ gem "sinatra-resources"
 gem "sprockets"
 gem "sprockets-helpers"
 gem "sass"
-gem "sprockets-es6"
+gem "sprockets-es6", require: "sprockets/es6"
 gem "uglifier"
 gem "therubyracer"
 gem "rack-contrib"
+gem "font-awesome-sass"
 
 group :development do
   gem "sinatra-contrib"
   gem 'guard-rspec', require: false
   gem "shotgun"
   gem "pry"
+  gem "foreman", require: false
 end
 
 group :test do
