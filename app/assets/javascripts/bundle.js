@@ -51,19 +51,16 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	var _reactAddons = __webpack_require__(2);
-
-	var _reactAddons2 = _interopRequireDefault(_reactAddons);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 	var _componentsAppJsx = __webpack_require__(175);
 
 	var _componentsAppJsx2 = _interopRequireDefault(_componentsAppJsx);
 
-	_reactAddons2['default'].render(_reactAddons2['default'].createElement(_componentsAppJsx2['default'], { list: window.location.hash }), document.getElementById("container"));
+	React.render(React.createElement(_componentsAppJsx2["default"], { list: window.location.hash }), document.getElementById("container"));
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
 /* 2 */
@@ -22558,7 +22555,7 @@
 /* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
@@ -22573,10 +22570,6 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _reactAddons = __webpack_require__(2);
-
-	var _reactAddons2 = _interopRequireDefault(_reactAddons);
 
 	var _listIndexJsx = __webpack_require__(176);
 
@@ -22610,42 +22603,39 @@
 	    key: 'render',
 	    value: function render() {
 	      if (this.state.list === undefined) {
-	        return _reactAddons2['default'].createElement(_listIndexJsx2['default'], { setList: this.setList.bind(this) });
+	        return React.createElement(_listIndexJsx2['default'], { setList: this.setList.bind(this) });
 	      } else {
-	        return _reactAddons2['default'].createElement(_todoListJsx2['default'], { id: this.state.list.id, name: this.state.list.name, reset: this.reset.bind(this) });
+	        return React.createElement(_todoListJsx2['default'], { id: this.state.list.id, name: this.state.list.name, reset: this.reset.bind(this) });
 	      }
 	    }
 	  }]);
 
 	  return App;
-	})(_reactAddons2['default'].Component);
+	})(React.Component);
 
 	exports['default'] = App;
 	module.exports = exports['default'];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
 /* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(fetch) {'use strict';
+	/* WEBPACK VAR INJECTION */(function(React, fetch) {"use strict";
 
-	Object.defineProperty(exports, '__esModule', {
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _reactAddons = __webpack_require__(2);
-
-	var _reactAddons2 = _interopRequireDefault(_reactAddons);
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _todoListLinkJsx = __webpack_require__(178);
 
@@ -22657,12 +22647,12 @@
 	  function ListIndex(props) {
 	    _classCallCheck(this, ListIndex);
 
-	    _get(Object.getPrototypeOf(ListIndex.prototype), 'constructor', this).call(this, props);
+	    _get(Object.getPrototypeOf(ListIndex.prototype), "constructor", this).call(this, props);
 	    this.state = { "lists": [] };
 	  }
 
 	  _createClass(ListIndex, [{
-	    key: 'componentDidMount',
+	    key: "componentDidMount",
 	    value: function componentDidMount() {
 	      var _this = this;
 
@@ -22670,28 +22660,28 @@
 	        return response.json();
 	      }).then(function (data) {
 	        _this.setState({ lists: data });
-	      })['catch'](function (ex) {
+	      })["catch"](function (ex) {
 	        console.error('Failed to fetch data', ex);
 	      });
 	    }
 	  }, {
-	    key: 'changeList',
+	    key: "changeList",
 	    value: function changeList(listID, listName) {
 	      this.props.setList(listID, listName);
 	    }
 	  }, {
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      var _this2 = this;
 
 	      var lists = this.state.lists.map(function (item) {
-	        return _reactAddons2['default'].createElement(_todoListLinkJsx2['default'], { id: item.id, name: item.name, key: item.id, click: _this2.changeList.bind(_this2, item.id, item.name) });
+	        return React.createElement(_todoListLinkJsx2["default"], { id: item.id, name: item.name, key: item.id, click: _this2.changeList.bind(_this2, item.id, item.name) });
 	      });
-	      return _reactAddons2['default'].createElement(
-	        'div',
-	        { id: 'lists' },
-	        _reactAddons2['default'].createElement(
-	          'ul',
+	      return React.createElement(
+	        "div",
+	        { id: "lists" },
+	        React.createElement(
+	          "ul",
 	          null,
 	          lists
 	        )
@@ -22700,206 +22690,14 @@
 	  }]);
 
 	  return ListIndex;
-	})(_reactAddons2['default'].Component);
+	})(React.Component);
 
-	exports['default'] = ListIndex;
-	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(181)))
-
-/***/ },
-/* 177 */,
-/* 178 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _reactAddons = __webpack_require__(2);
-
-	var _reactAddons2 = _interopRequireDefault(_reactAddons);
-
-	var TodoListLink = (function (_React$Component) {
-	  _inherits(TodoListLink, _React$Component);
-
-	  function TodoListLink(props) {
-	    _classCallCheck(this, TodoListLink);
-
-	    _get(Object.getPrototypeOf(TodoListLink.prototype), "constructor", this).call(this, props);
-	  }
-
-	  _createClass(TodoListLink, [{
-	    key: "render",
-	    value: function render() {
-	      return _reactAddons2["default"].createElement(
-	        "li",
-	        { id: this.props.id },
-	        _reactAddons2["default"].createElement(
-	          "a",
-	          { href: "#", onClick: this.props.click },
-	          this.props.name
-	        )
-	      );
-	    }
-	  }]);
-
-	  return TodoListLink;
-	})(_reactAddons2["default"].Component);
-
-	exports["default"] = TodoListLink;
+	exports["default"] = ListIndex;
 	module.exports = exports["default"];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(177)))
 
 /***/ },
-/* 179 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(fetch) {'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _reactAddons = __webpack_require__(2);
-
-	var _reactAddons2 = _interopRequireDefault(_reactAddons);
-
-	var _todoListItemJsx = __webpack_require__(180);
-
-	var _todoListItemJsx2 = _interopRequireDefault(_todoListItemJsx);
-
-	var TodoList = (function (_React$Component) {
-	  _inherits(TodoList, _React$Component);
-
-	  function TodoList(props) {
-	    _classCallCheck(this, TodoList);
-
-	    _get(Object.getPrototypeOf(TodoList.prototype), 'constructor', this).call(this, props);
-	    this.state = { "items": [] };
-	  }
-
-	  _createClass(TodoList, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      var _this = this;
-
-	      fetch("/lists/" + this.props.id + "/items").then(function (response) {
-	        return response.json();
-	      }).then(function (data) {
-	        _this.setState({ items: data });
-	      })['catch'](function (ex) {
-	        console.error('Failed to fetch data', ex);
-	      });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var items = this.state.items.map(function (item) {
-	        return _reactAddons2['default'].createElement(_todoListItemJsx2['default'], { id: item.id, name: item.name, key: item.id });
-	      });
-	      return _reactAddons2['default'].createElement(
-	        'div',
-	        null,
-	        _reactAddons2['default'].createElement(
-	          'h2',
-	          null,
-	          this.props.name
-	        ),
-	        _reactAddons2['default'].createElement(
-	          'ul',
-	          { id: 'items' },
-	          items
-	        ),
-	        _reactAddons2['default'].createElement(
-	          'a',
-	          { href: '#', onClick: this.props.reset },
-	          'Back'
-	        )
-	      );
-	    }
-	  }]);
-
-	  return TodoList;
-	})(_reactAddons2['default'].Component);
-
-	exports['default'] = TodoList;
-	module.exports = exports['default'];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(181)))
-
-/***/ },
-/* 180 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var _reactAddons = __webpack_require__(2);
-
-	var _reactAddons2 = _interopRequireDefault(_reactAddons);
-
-	var TodoListItem = (function (_React$Component) {
-	  _inherits(TodoListItem, _React$Component);
-
-	  function TodoListItem(props) {
-	    _classCallCheck(this, TodoListItem);
-
-	    _get(Object.getPrototypeOf(TodoListItem.prototype), "constructor", this).call(this, props);
-	  }
-
-	  _createClass(TodoListItem, [{
-	    key: "render",
-	    value: function render() {
-	      return _reactAddons2["default"].createElement(
-	        "li",
-	        { id: this.props.id },
-	        _reactAddons2["default"].createElement("input", { type: "checkbox" }),
-	        this.props.name
-	      );
-	    }
-	  }]);
-
-	  return TodoListItem;
-	})(_reactAddons2["default"].Component);
-
-	exports["default"] = TodoListItem;
-	module.exports = exports["default"];
-
-/***/ },
-/* 181 */
+/* 177 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*** IMPORTS FROM imports-loader ***/
@@ -23240,6 +23038,183 @@
 	/*** EXPORTS FROM exports-loader ***/
 	module.exports = global.fetch}.call(global));
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var TodoListLink = (function (_React$Component) {
+	  _inherits(TodoListLink, _React$Component);
+
+	  function TodoListLink(props) {
+	    _classCallCheck(this, TodoListLink);
+
+	    _get(Object.getPrototypeOf(TodoListLink.prototype), "constructor", this).call(this, props);
+	  }
+
+	  _createClass(TodoListLink, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "li",
+	        { id: this.props.id },
+	        React.createElement(
+	          "a",
+	          { href: "#", onClick: this.props.click },
+	          this.props.name
+	        )
+	      );
+	    }
+	  }]);
+
+	  return TodoListLink;
+	})(React.Component);
+
+	exports["default"] = TodoListLink;
+	module.exports = exports["default"];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React, fetch) {"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _todoListItemJsx = __webpack_require__(180);
+
+	var _todoListItemJsx2 = _interopRequireDefault(_todoListItemJsx);
+
+	var TodoList = (function (_React$Component) {
+	  _inherits(TodoList, _React$Component);
+
+	  function TodoList(props) {
+	    _classCallCheck(this, TodoList);
+
+	    _get(Object.getPrototypeOf(TodoList.prototype), "constructor", this).call(this, props);
+	    this.state = { "items": [] };
+	  }
+
+	  _createClass(TodoList, [{
+	    key: "componentDidMount",
+	    value: function componentDidMount() {
+	      var _this = this;
+
+	      fetch("/lists/" + this.props.id + "/items").then(function (response) {
+	        return response.json();
+	      }).then(function (data) {
+	        _this.setState({ items: data });
+	      })["catch"](function (ex) {
+	        console.error('Failed to fetch data', ex);
+	      });
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var items = this.state.items.map(function (item) {
+	        return React.createElement(_todoListItemJsx2["default"], { id: item.id, name: item.name, key: item.id });
+	      });
+	      return React.createElement(
+	        "div",
+	        null,
+	        React.createElement(
+	          "h2",
+	          null,
+	          this.props.name
+	        ),
+	        React.createElement(
+	          "ul",
+	          { id: "items" },
+	          items
+	        ),
+	        React.createElement(
+	          "a",
+	          { href: "#", onClick: this.props.reset },
+	          "Back"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return TodoList;
+	})(React.Component);
+
+	exports["default"] = TodoList;
+	module.exports = exports["default"];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(177)))
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var TodoListItem = (function (_React$Component) {
+	  _inherits(TodoListItem, _React$Component);
+
+	  function TodoListItem(props) {
+	    _classCallCheck(this, TodoListItem);
+
+	    _get(Object.getPrototypeOf(TodoListItem.prototype), "constructor", this).call(this, props);
+	  }
+
+	  _createClass(TodoListItem, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "li",
+	        { id: this.props.id },
+	        React.createElement("input", { type: "checkbox" }),
+	        this.props.name
+	      );
+	    }
+	  }]);
+
+	  return TodoListItem;
+	})(React.Component);
+
+	exports["default"] = TodoListItem;
+	module.exports = exports["default"];
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }
 /******/ ]);

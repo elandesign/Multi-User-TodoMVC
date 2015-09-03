@@ -1,5 +1,3 @@
-import React from 'react/addons';
-
 export default class TodoListItem extends React.Component {
   constructor(props) {
     super(props);

@@ -1,4 +1,3 @@
-import React from 'react/addons';
 import TodoListLink from './todoListLink.jsx';
 
 export default class ListIndex extends React.Component {

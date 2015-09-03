@@ -1,4 +1,3 @@
-import React from 'react/addons';
 import TodoListItem from './todoListItem.jsx';
 
 export default class TodoList extends React.Component {

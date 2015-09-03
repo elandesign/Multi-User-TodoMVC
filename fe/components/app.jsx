@@ -1,4 +1,3 @@
-import React from 'react/addons';
 import ListIndex from './listIndex.jsx';
 import TodoList from './todoList.jsx';
 

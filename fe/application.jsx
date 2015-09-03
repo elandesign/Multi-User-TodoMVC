@@ -1,4 +1,3 @@
-import React from 'react/addons';
 import App from './components/app.jsx';
 
 React.render(
