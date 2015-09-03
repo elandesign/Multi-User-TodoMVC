@@ -9,10 +9,10 @@ export default class ListIndex extends React.Component {
   componentDidMount() {
     fetch("/lists").then(response => {
       return response.json();
-    }).then(data => {
-      this.setState({lists: data});
     }).catch(ex => {
       console.error('Failed to fetch data', ex);
+    }).then(data => {
+      this.setState({lists: data});
     });
   }
   changeList(listID, listName) {
@@ -21,7 +21,7 @@ export default class ListIndex extends React.Component {
 
   render() {
     var lists = this.state.lists.map(item => {
-      return (<TodoListLink id={item.id} name={item.name} key={item.id} click={this.changeList.bind(this, item.id, item.name)} />);
+      return (<TodoListLink id={item.id} name={item.name} key={item.id} />);
     });
     return <div id="lists">
       <ul>

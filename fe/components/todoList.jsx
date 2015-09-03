@@ -1,4 +1,6 @@
+import Router from 'react-router';
 import TodoListItem from './todoListItem.jsx';
+var Link = Router.Link;
 
 export default class TodoList extends React.Component {
   constructor(props) {
@@ -7,12 +9,13 @@ export default class TodoList extends React.Component {
   }
 
   componentDidMount() {
-    fetch("/lists/" + this.props.id + "/items").then(response => {
+    var listId = this.context.router.getCurrentParams().listId;
+    fetch("/lists/" + listId + "/items").then(response => {
       return response.json();
-    }).then(data => {
-      this.setState({items: data});
     }).catch(ex => {
       console.error('Failed to fetch data', ex);
+    }).then(data => {
+      this.setState({items: data});
     });
   }
 
@@ -25,7 +28,11 @@ export default class TodoList extends React.Component {
       <ul id="items">
         {items}
       </ul>
-      <a href="#" onClick={this.props.reset}>Back</a>
+      <Link to="lists">Back</Link>
     </div>;
   }
 }
+
+TodoList.contextTypes = {
+  router: React.PropTypes.func.isRequired
+};
